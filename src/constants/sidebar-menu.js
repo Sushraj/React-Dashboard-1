@@ -14,20 +14,27 @@ const sidebar_menu = [
         id: 2,
         icon: ProductIcon,
         path: '/orders',
-        title: 'Orders',
+        title: 'Product',
     },
-    {
-        id: 3,
-        icon: ShippingIcon,
-        path: '/products',
-        title: 'Products',
-    },
+    // {
+    //     id: 3,
+    //     icon: ShippingIcon,
+    //     path: '/product',
+    //     title: 'Product',
+    // },
     {
         id: 4,
+        icon: ShippingIcon,
+        path: '/queries',
+        title: 'Queries',
+    },
+    {
+        id: 5,
         icon: UserIcon,
         path: '/profile',
         title: 'My account',
-    }
+    },
+
 ]
 
 export default sidebar_menu;

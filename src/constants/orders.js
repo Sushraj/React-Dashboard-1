@@ -8,7 +8,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/7-image.jpg",
         product: "Phone Case Pink  x 2",
         price: "50,00",
-        status: "Paid"
+        status: "Paid",
+        category: 'Mobile Accessories',
+        brand: 'Scarlet'
     },
     {
         id: "#1235",
@@ -19,7 +21,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/8-image.jpg",
         product: "Valvet T-shirt",
         price: "55,50",
-        status: "Canceled"
+        status: "Canceled",
+        category: 'Cloths',
+        brand: 'US Polo'
     },
     {
         id: "#1234",
@@ -30,7 +34,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/9-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Paid"
+        status: "Paid",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1233",
@@ -41,7 +47,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/10-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Refunded"
+        status: "Refunded",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1232",
@@ -52,7 +60,8 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/11-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Canceled"
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1231",
@@ -63,7 +72,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/12-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Paid"
+        status: "Paid",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1236",
@@ -74,7 +85,10 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/7-image.jpg",
         product: "Phone Case Pink  x 2",
         price: "50,00",
-        status: "Paid"
+        status: "Paid",
+        category: 'Shoe',
+        brand: 'Nike'
+
     },
     {
         id: "#1235",
@@ -85,7 +99,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/8-image.jpg",
         product: "Valvet T-shirt",
         price: "55,50",
-        status: "Canceled"
+        status: "Canceled",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1234",
@@ -96,7 +112,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/9-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Paid"
+        status: "Paid",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1233",
@@ -107,7 +125,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/10-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Refunded"
+        status: "Refunded",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1232",
@@ -118,7 +138,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/11-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Canceled"
+        status: "Canceled",
+        category: 'Shoe',
+        brand: 'Nike'
     },
     {
         id: "#1231",
@@ -129,7 +151,9 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/12-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        status: "Paid"
+        status: "Paid",
+        category: 'Shoe',
+        brand: 'Nike'
     }
 ]
 

@@ -13,8 +13,8 @@
     align-items: center;
 }
 .sidebar-logo-container img {
-    width: 50%;
-    padding: 2em;
+    width: 68%;
+    padding: 0em;
 }
 .sidebar-container {
     flex: 1;
