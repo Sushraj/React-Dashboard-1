@@ -31,7 +31,11 @@ function EditProduct() {
                 <label> Product Quntity</label>
                 <input placeholder="Quntity" type="number" />
               </Form.Field>
-              <Button type="submit">Add</Button>
+              <Form.Field>
+                <label> Product Image</label>
+                <input placeholder="Image name" type="file" />
+              </Form.Field>
+              <Button type="submit">Update</Button>
             </Form>
           </div>
         </CardContent>

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 function Orders() {
   let navigate = useNavigate();
   function handleClick(event) {
-    navigate('/edit-product');
+    navigate("/edit-product");
   }
 
   const [search, setSearch] = useState("");
@@ -85,19 +85,26 @@ function Orders() {
                     <span>{order.category}</span>
                   </td>
                   <td>
-                  <span>{order.product}</span>
+                    <span>{order.product}</span>
                   </td>
-                  <td>
-                  ${order.price}
-                  </td>
+                  <td>₹{order.price}</td>
                   <td>
                     <span>{order.brand}</span>
                   </td>
                   <td>
-                    <span>${order.price}</span>
+                    <div>
+                      <img
+                        src={order.avatar}
+                        className="dashboard-content-avatar"
+                        alt={order.first_name + " " + order.last_name}
+                      />
+                      <span>
+                        {order.first_name} {order.last_name}
+                      </span>
+                    </div>
                   </td>
                   <td>
-                    <button  onClick={handleClick}>Edit</button>
+                    <button onClick={handleClick}>Edit</button>
                   </td>
                 </tr>
               ))}

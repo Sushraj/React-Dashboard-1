@@ -33,6 +33,10 @@ function AddProduct() {
                 <label> Product Quntity</label>
                 <input placeholder="Quntity" type="number" />
               </Form.Field>
+              <Form.Field>
+                <label> Product Image</label>
+                <input placeholder="image name" type="file" />
+              </Form.Field>
               <Button type="submit">Add</Button>
             </Form>
           </div>

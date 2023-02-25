@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import SideBarItem from "./sidebar-item";
 
@@ -24,6 +24,20 @@ function SideBar({ menu }) {
     setActive(id);
   };
 
+  //   function logout() {
+  //     localStorage.clear();
+  //     window.location.href = '/logout';
+  // };
+
+ 
+
+  let navigate = useNavigate();
+  function greetUser() {
+    console.log('Hello we are here');
+    localStorage.clear();
+    navigate('/logout');
+  }
+
   return (
     <nav className="sidebar">
       <div className="sidebar-container">
@@ -40,12 +54,13 @@ function SideBar({ menu }) {
             ))}
           </div>
 
-          <div className="sidebar-footer">
+          <div className="sidebar-footer" onClick={greetUser}>
             <span className="sidebar-item-label">Logout</span>
             <img
               src={LogoutIcon}
               alt="icon-logout"
               className="sidebar-item-icon"
+              onClick={greetUser}
             />
           </div>
         </div>

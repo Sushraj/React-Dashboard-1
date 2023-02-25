@@ -6,10 +6,10 @@ const all_orders = [
         first_name: "Michael",
         last_name: "Lawson",
         avatar: "https://reqres.in/img/faces/7-image.jpg",
-        product: "Phone Case Pink  x 2",
+        product: "Sweatshirt",
         price: "50,00",
         status: "Paid",
-        category: 'Mobile Accessories',
+        category: 'Men',
         brand: 'Scarlet'
     },
     {
@@ -22,7 +22,7 @@ const all_orders = [
         product: "Valvet T-shirt",
         price: "55,50",
         status: "Canceled",
-        category: 'Cloths',
+        category: 'Women',
         brand: 'US Polo'
     },
     {
@@ -32,11 +32,11 @@ const all_orders = [
         first_name: "Tobias",
         last_name: "Funke",
         avatar: "https://reqres.in/img/faces/9-image.jpg",
-        product: "Nike Sport V2",
+        product: "US Polo Sport shorts",
         price: "140,20",
         status: "Paid",
-        category: 'Shoe',
-        brand: 'Nike'
+        category: 'Kids',
+        brand: 'US POLO'
     },
     {
         id: "#1233",
@@ -48,7 +48,7 @@ const all_orders = [
         product: "Nike Sport V2",
         price: "140,20",
         status: "Refunded",
-        category: 'Shoe',
+        category: 'Kids',
         brand: 'Nike'
     },
     {
@@ -60,7 +60,7 @@ const all_orders = [
         avatar: "https://reqres.in/img/faces/11-image.jpg",
         product: "Nike Sport V2",
         price: "140,20",
-        category: 'Shoe',
+        category: 'Men',
         brand: 'Nike'
     },
     {
@@ -73,7 +73,7 @@ const all_orders = [
         product: "Nike Sport V2",
         price: "140,20",
         status: "Paid",
-        category: 'Shoe',
+        category: 'Woman',
         brand: 'Nike'
     },
     {
@@ -86,7 +86,7 @@ const all_orders = [
         product: "Phone Case Pink  x 2",
         price: "50,00",
         status: "Paid",
-        category: 'Shoe',
+        category: 'Men',
         brand: 'Nike'
 
     },
@@ -100,7 +100,7 @@ const all_orders = [
         product: "Valvet T-shirt",
         price: "55,50",
         status: "Canceled",
-        category: 'Shoe',
+        category: 'Men',
         brand: 'Nike'
     },
     {
@@ -113,7 +113,7 @@ const all_orders = [
         product: "Nike Sport V2",
         price: "140,20",
         status: "Paid",
-        category: 'Shoe',
+        category: 'Woman',
         brand: 'Nike'
     },
     {
@@ -126,7 +126,7 @@ const all_orders = [
         product: "Nike Sport V2",
         price: "140,20",
         status: "Refunded",
-        category: 'Shoe',
+        category: 'Kids',
         brand: 'Nike'
     },
     {
@@ -139,7 +139,7 @@ const all_orders = [
         product: "Nike Sport V2",
         price: "140,20",
         status: "Canceled",
-        category: 'Shoe',
+        category: 'Men',
         brand: 'Nike'
     },
     {
@@ -152,7 +152,7 @@ const all_orders = [
         product: "Nike Sport V2",
         price: "140,20",
         status: "Paid",
-        category: 'Shoe',
+        category: 'Woman',
         brand: 'Nike'
     }
 ]

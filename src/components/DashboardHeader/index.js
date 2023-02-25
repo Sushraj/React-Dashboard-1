@@ -16,6 +16,11 @@ function DashboardHeader({ btnText, onClick }) {
     navigate("/add-product");
   }
 
+ 
+  function getSellerProfile() {
+    navigate('/profile');
+  }
+
   return (
     <div className="dashbord-header-container">
       {btnText && (
@@ -35,10 +40,12 @@ function DashboardHeader({ btnText, onClick }) {
           alt="settings-icon"
           className="dashbord-header-icon"
         /> */}
+        <span onClick={getSellerProfile}>
         <img
           className="dashbord-header-avatar"
           src="https://img.freepik.com/premium-vector/female-user-profile-avatar-is-woman-character-screen-saver-with-emotions_505620-617.jpg"
         />
+        </span>
       </div>
     </div>
   );

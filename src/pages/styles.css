@@ -154,9 +154,11 @@ td span {
 }
 
 .dashboard-card-width{
-    width: 200px;
-    margin-left: 100px;
-    margin-top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-top: 37px;
 }
 
 .profile-card {
@@ -165,4 +167,18 @@ td span {
 
 .add-product-card {
     margin: 100px;
+}
+
+.dashboard-card-title {
+    text-align: center;
+}
+
+.element-center-align{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 26%;
+    margin-top: 2px;
+    margin-bottom: 24px;
+
 }
