@@ -2,16 +2,13 @@ import React from "react";
 import DashboardHeader from "../../components/DashboardHeader";
 import "../styles.css";
 import { Form, Button } from "semantic-ui-react";
-import { Card, CardContent } from '@mui/material';
-
-
+import { Card, CardContent } from "@mui/material";
 
 function Queries() {
   return (
     <div className="dashboard-content">
       <DashboardHeader btnText="Add Product" />
-
-      <Card sx={{ minWidth: 275 }} className='profile-card'>
+      <Card sx={{ minWidth: 275 }} className="profile-card">
         <CardContent>
           <div>
             <Form>
@@ -23,8 +20,10 @@ function Queries() {
                 <label>Query Description</label>
                 <input placeholder="Last Name" type="text" />
               </Form.Field>
-              
-              <Button type="submit">Add</Button>
+
+              <Button type="submit" primary>
+                Add
+              </Button>
             </Form>
           </div>
         </CardContent>

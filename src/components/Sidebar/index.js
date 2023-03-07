@@ -24,18 +24,10 @@ function SideBar({ menu }) {
     setActive(id);
   };
 
-  //   function logout() {
-  //     localStorage.clear();
-  //     window.location.href = '/logout';
-  // };
-
- 
-
   let navigate = useNavigate();
-  function greetUser() {
-    console.log('Hello we are here');
+  function logout() {
     localStorage.clear();
-    navigate('/logout');
+    navigate("/logout");
   }
 
   return (
@@ -54,13 +46,13 @@ function SideBar({ menu }) {
             ))}
           </div>
 
-          <div className="sidebar-footer" onClick={greetUser}>
+          <div className="sidebar-footer" onClick={logout}>
             <span className="sidebar-item-label">Logout</span>
             <img
               src={LogoutIcon}
               alt="icon-logout"
               className="sidebar-item-icon"
-              onClick={greetUser}
+              onClick={logout}
             />
           </div>
         </div>

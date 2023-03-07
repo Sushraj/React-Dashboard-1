@@ -48,8 +48,11 @@ function Dashboard() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={allProductRouteChange}>
-                  Click Here
+                <Button
+                  onClick={allProductRouteChange}
+                  className="click-here-button"
+                >
+                  <span> Click Here</span>
                 </Button>
               </CardActions>
               <span className="element-center-align">
@@ -68,8 +71,11 @@ function Dashboard() {
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={sellerProfileRouteChange}>
-                  Click Here
+                <Button
+                  onClick={sellerProfileRouteChange}
+                  className="click-here-button"
+                >
+                  <span> Click Here</span>
                 </Button>
               </CardActions>
               <span className="element-center-align">

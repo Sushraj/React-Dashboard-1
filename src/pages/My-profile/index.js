@@ -9,23 +9,37 @@ function MyProfile() {
     <div className="dashboard-content">
       <DashboardHeader btnText="Add Product" />
 
-      <Card sx={{ minWidth: 275 }} className='profile-card'>
+      <Card sx={{ minWidth: 275 }} className="profile-card">
         <CardContent>
           <div>
             <Form>
               <Form.Field>
                 <label>Seller Name</label>
-                <input placeholder="John Smith" type="text" />
+                <input
+                  placeholder="Amruta"
+                  type="text"
+                  value={"Amruta"}
+                  disabled
+                />
               </Form.Field>
               <Form.Field>
                 <label>Seller Phone</label>
-                <input placeholder="+121044434" type="text" />
+                <input
+                  placeholder="+121044434"
+                  type="text"
+                  value={"9834348016"}
+                  disabled
+                />
               </Form.Field>
               <Form.Field>
                 <label> Seller Email</label>
-                <input placeholder="johnSmith0057@gmail.com" type="email" />
+                <input
+                  placeholder="amruta@gmail.com"
+                  type="email"
+                  value={"amruta@gmail.com"}
+                  disabled
+                />
               </Form.Field>
-              <Button type="submit">Submit</Button>
             </Form>
           </div>
         </CardContent>

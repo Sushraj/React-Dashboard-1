@@ -5,8 +5,6 @@ import { Form, Button } from "semantic-ui-react";
 function EditProduct() {
   return (
     <div className="dashboard-content">
-      {/* <DashboardHeader btnText="Add Product" /> */}
-
       <Card sx={{ minWidth: 275 }} className="profile-card">
         <CardContent>
           <div>
@@ -35,7 +33,9 @@ function EditProduct() {
                 <label> Product Image</label>
                 <input placeholder="Image name" type="file" />
               </Form.Field>
-              <Button type="submit">Update</Button>
+              <Button type="submit" primary>
+                Update
+              </Button>
             </Form>
           </div>
         </CardContent>

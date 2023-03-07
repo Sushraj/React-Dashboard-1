@@ -1,38 +1,64 @@
 import React, { useState, useEffect } from "react";
 import DashboardHeader from "../../components/DashboardHeader";
 
-import all_orders from "../../constants/orders";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
 import "../styles.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Orders() {
+  const All_Product_URL = "http://localhost:4000/AllProduct";
+
+  const [eventDetails, setEventDetails] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  function getEvents() {
+    setIsLoading(true);
+    axios
+      .get(All_Product_URL)
+      .then((response) => response.data)
+      .then((data) => {
+        console.log("data-->", data);
+        setEventDetails(data);
+        setIsLoading(false);
+      });
+  }
+
   let navigate = useNavigate();
   function handleClick(event) {
     navigate("/edit-product");
   }
 
+  function handleClickDel(event) {
+    alert("Deleted Successfully!!");
+    navigate("/orders");
+  }
+
   const [search, setSearch] = useState("");
-  const [orders, setOrders] = useState(all_orders);
+  const [orders, setOrders] = useState(eventDetails);
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState([]);
 
   useEffect(() => {
-    setPagination(calculateRange(all_orders, 5));
-    setOrders(sliceData(all_orders, page, 5));
+    getEvents();
+    setPagination(calculateRange(eventDetails, 5));
+    setOrders(sliceData(eventDetails, page, 5));
   }, []);
 
   // Search
   const __handleSearch = (event) => {
+    console.log(event.target.value);
     setSearch(event.target.value);
     if (event.target.value !== "") {
-      let search_results = orders.filter(
-        (item) =>
-          item.first_name.toLowerCase().includes(search.toLowerCase()) ||
-          item.last_name.toLowerCase().includes(search.toLowerCase()) ||
-          item.product.toLowerCase().includes(search.toLowerCase())
-      );
+      console.log("eventDetails-->", eventDetails);
+      let search_results = eventDetails.filter((item) => {
+        console.log("item-->", item);
+        console.log("search-->", search);
+        item.productcategory.includes(search);
+        // ||
+        // item.productcategory.toLowerCase().includes(search.toLowerCase()) ||
+        // item.productdesc.toLowerCase().includes(search.toLowerCase())
+      });
       setOrders(search_results);
     } else {
       __handleChangePage(1);
@@ -42,7 +68,7 @@ function Orders() {
   // Change Page
   const __handleChangePage = (new_page) => {
     setPage(new_page);
-    setOrders(sliceData(all_orders, new_page, 5));
+    setOrders(sliceData(eventDetails, new_page, 5));
   };
 
   return (
@@ -69,27 +95,39 @@ function Orders() {
             <th>Product Category</th>
             <th>Product Name</th>
             <th>Product Price</th>
-            <th>Product Brand</th>
+            <th>Product Description</th>
+            <th>Quantity</th>
+            <th>Live</th>
+            <th>Stock</th>
             <th>Product Image</th>
             <th>Action</th>
           </thead>
 
-          {orders.length !== 0 ? (
+          {eventDetails.length !== 0 ? (
             <tbody>
-              {orders.map((order, index) => (
+              {eventDetails.map((order, index) => (
                 <tr key={index}>
                   <td>
-                    <span>{order.id}</span>
+                    <span>{order.productid}</span>
                   </td>
                   <td>
-                    <span>{order.category}</span>
+                    <span>{order.productcategory}</span>
                   </td>
                   <td>
-                    <span>{order.product}</span>
+                    <span>{order.productimage}</span>
                   </td>
-                  <td>₹{order.price}</td>
+                  <td>₹{order.productprice}</td>
                   <td>
-                    <span>{order.brand}</span>
+                    <span>{order.productdesc}</span>
+                  </td>
+                  <td>
+                    <span>{order.productqty}</span>
+                  </td>
+                  <td>
+                    <span>{order.live ? "Active" : "Deactive"}</span>
+                  </td>
+                  <td>
+                    <span>{order.stock ? "Available" : "Not - Available"}</span>
                   </td>
                   <td>
                     <div>
@@ -105,6 +143,10 @@ function Orders() {
                   </td>
                   <td>
                     <button onClick={handleClick}>Edit</button>
+
+                    <button className="delete-btn-ml" onClick={handleClickDel}>
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}
@@ -112,7 +154,7 @@ function Orders() {
           ) : null}
         </table>
 
-        {orders.length !== 0 ? (
+        {eventDetails.length !== 0 ? (
           <div className="dashboard-content-footer">
             {pagination.map((item, index) => (
               <span
