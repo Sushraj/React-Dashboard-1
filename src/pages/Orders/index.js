@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DashboardHeader from "../../components/DashboardHeader";
+import { Button } from "semantic-ui-react";
 
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
@@ -9,29 +10,53 @@ import axios from "axios";
 
 function Orders() {
   const All_Product_URL = "http://localhost:4000/AllProduct";
+  const DELETE_Product_URL = "http://localhost:4000/delProduct/5";
 
   const [eventDetails, setEventDetails] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  //const [isLoading, setIsLoading] = useState(false);
   function getEvents() {
-    setIsLoading(true);
+    // setIsLoading(true);
     axios
       .get(All_Product_URL)
       .then((response) => response.data)
       .then((data) => {
         console.log("data-->", data);
         setEventDetails(data);
-        setIsLoading(false);
+        // setIsLoading(false);
+      });
+  }
+
+  function deleteProduct() {
+    // setIsLoading(true);
+    axios
+      .delete(DELETE_Product_URL)
+      .then((response) => {
+        console.log("dfghj---->", response);
+        getEvents();
+        alert("Deleted Successfully!!");
+        navigate("/orders");
+        //
+      })
+      .then((data) => {
+        console.log("data-->", data);
+        // setEventDetails(data);
+        // setIsLoading(false);
       });
   }
 
   let navigate = useNavigate();
-  function handleClick(event) {
+  function handleEdit(event) {
+    console.log(event);
+    localStorage.setItem("CATEGORY", JSON.stringify(event.category));
+    localStorage.setItem("LIVE", JSON.stringify(event.live));
+    localStorage.setItem("PCATEGORY", JSON.stringify(event.productcategory));
+    localStorage.setItem("PDESCRIPTION", JSON.stringify(event.productdesc));
+    localStorage.setItem("PID", JSON.stringify(event.productid));
+    localStorage.setItem("PIMAGE", JSON.stringify(event.productimage));
+    localStorage.setItem("PPRICE", JSON.stringify(event.productprice));
+    localStorage.setItem("PQTY", JSON.stringify(event.productqty));
+    localStorage.setItem("PSTOCK", JSON.stringify(event.stock));
     navigate("/edit-product");
-  }
-
-  function handleClickDel(event) {
-    alert("Deleted Successfully!!");
-    navigate("/orders");
   }
 
   const [search, setSearch] = useState("");
@@ -93,13 +118,13 @@ function Orders() {
           <thead>
             <th>Product ID</th>
             <th>Product Category</th>
-            <th>Product Name</th>
+            <th>Product Image</th>
             <th>Product Price</th>
             <th>Product Description</th>
             <th>Quantity</th>
             <th>Live</th>
             <th>Stock</th>
-            <th>Product Image</th>
+            {/* <th>Product Image</th> */}
             <th>Action</th>
           </thead>
 
@@ -129,7 +154,7 @@ function Orders() {
                   <td>
                     <span>{order.stock ? "Available" : "Not - Available"}</span>
                   </td>
-                  <td>
+                  {/* <td>
                     <div>
                       <img
                         src={order.avatar}
@@ -140,13 +165,14 @@ function Orders() {
                         {order.first_name} {order.last_name}
                       </span>
                     </div>
-                  </td>
+                  </td> */}
                   <td>
-                    <button onClick={handleClick}>Edit</button>
-
-                    <button className="delete-btn-ml" onClick={handleClickDel}>
+                    <Button primary onClick={(e) => handleEdit(order)}>
+                      Edit
+                    </Button>
+                    <Button primary onClick={deleteProduct}>
                       Delete
-                    </button>
+                    </Button>
                   </td>
                 </tr>
               ))}
