@@ -13,6 +13,7 @@ import MyProfile from "./pages/My-profile";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
 import Logout from "./pages/Logout";
+import Users from "./pages/Users";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/add-product" element={<AddProduct />} />
             <Route exact path="/edit-product" element={<EditProduct />} />
             <Route exact path="/logout" element={<Logout />} />
+            <Route exact path="/users" element={<Users/>} />
           </Routes>
         </div>
       </div>

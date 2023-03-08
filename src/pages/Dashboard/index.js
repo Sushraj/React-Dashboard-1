@@ -12,9 +12,16 @@ import { Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import productPng from "../../assets/images/product-list.png";
 import sellerProfilePng from "../../assets/images/seller-profile.png";
+import userPng from "../../assets/images/icon-users.png"
 
 function Dashboard() {
   let navigate = useNavigate();
+
+  const allUsersRouteChange = () => {
+    let path = `users`;
+    navigate(path);
+  };
+
   const allProductRouteChange = () => {
     let path = `orders`;
     navigate(path);
@@ -35,7 +42,32 @@ function Dashboard() {
       <div className="dashboard-content">
         <DashboardHeader btnText="Add Product" />
         <Grid container>
-          <Grid item xs={6}>
+        <Grid item xs={4}>
+            <Card className="dashboard-card-width">
+              <CardContent className="dashboard-card-title">
+                <Typography variant="h5" component="div">
+                  All Users
+                </Typography>
+
+                <Typography variant="body2">
+                  You will get Product List here
+                  <br />
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button
+                  onClick={allUsersRouteChange}
+                  className="click-here-button"
+                >
+                  <span> Click Here</span>
+                </Button>
+              </CardActions>
+              <span className="element-center-align">
+                <img src={userPng} alt="userPng" />
+              </span>
+            </Card>
+          </Grid>
+          <Grid item xs={4}>
             <Card className="dashboard-card-width">
               <CardContent className="dashboard-card-title">
                 <Typography variant="h5" component="div">
@@ -60,7 +92,7 @@ function Dashboard() {
               </span>
             </Card>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <Card className="dashboard-card-width">
               <CardContent className="dashboard-card-title">
                 <Typography variant="h5" component="div">
